@@ -86,3 +86,9 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ```
 1.{...s,...t}合并数据，已最后一个为准
 ```
+
+### 原逻辑修改
+```vue
+1.修改了默认参数
+   pageCount从9修改为0
+```

@@ -52,7 +52,7 @@ export default {
       defaults: {
         totalData: 0, // 数据总条数
         showData: 0, // 每页显示的条数
-        pageCount: 9, // 总页数,默认为9
+        pageCount: 0, // 总页数,默认为9
         current: 1, // 当前第几页
         prevCls: 'prev', // 上一页class
         nextCls: 'next', // 下一页class
@@ -65,7 +65,7 @@ export default {
         endPage: '', // 尾页节点内容
         keepShowPN: false, // 是否一直显示上一页下一页
         mode: 'unfixed', // 分页模式，unfixed：不固定页码数量，fixed：固定页码数量
-        count: 0, // mode为unfixed时显示当前选中页前后页数，mode为fixed显示页码总数
+        count: 4, // mode为unfixed时显示当前选中页前后页数，mode为fixed显示页码总数
         jump: false, // 跳转到指定页数
         jumpIptCls: 'jump-ipt', // 文本框内容
         jumpBtnCls: 'jump-btn', // 跳转按钮
@@ -108,9 +108,7 @@ export default {
       return this.current() + this.defaults.count < this.pageCount() && this.current() >= 1 && this.pageCount() > this.defaults.count
     },
     unfixedStart: function () {
-      let number = (this.current() - this.defaults.count) <= 1 ? 1 : (this.current() - this.defaults.count)
-      console.log('start' + number)
-      return number
+      return (this.current() - this.defaults.count) <= 1 ? 1 : (this.current() - this.defaults.count)
     },
     unfixedEnd: function () {
       var newVar = (this.current() + this.defaults.count) >= this.pageCount() ? this.pageCount()
