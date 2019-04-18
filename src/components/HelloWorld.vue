@@ -21,27 +21,26 @@ export default {
     msg: String
   },
   components: {
-      Page
-    },
-  data: function(){
-    return {
-      myMsg:null,
-    };
+    Page
   },
-  methods:{
-    changeMsg(){
-        console.log('父组件方法');
-        if(this.myMsg == null){
-            this.myMsg = 'tttt';
-        }else{
-            this.myMsg = '测试';
-        }
-
-    },
-    clickParent(){
-        this.$refs.myChild.parentHandleclick("我是爸爸");
+  data: function () {
+    return {
+      myMsg: null
     }
   },
+  methods: {
+    changeMsg () {
+      console.log('父组件方法')
+      if (this.myMsg == null) {
+        this.myMsg = 'tttt'
+      } else {
+        this.myMsg = '测试'
+      }
+    },
+    clickParent () {
+      this.$refs.myChild.parentHandleclick('我是爸爸')
+    }
+  }
 }
 </script>
 

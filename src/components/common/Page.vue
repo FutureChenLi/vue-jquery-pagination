@@ -12,19 +12,19 @@ export default {
   props: {
     msg: String
   },
-  data:function(){
+  data: function () {
     return {
-        childMsg:null
-    };
+      childMsg: null
+    }
   },
-  methods:{
-    changeF:function(){
-      console.log("子组件单击开始");
-      this.$emit('changeP');
+  methods: {
+    changeF: function () {
+      console.log('子组件单击开始')
+      this.$emit('changeP')
     },
-    parentHandleclick(e) {
-        console.log(e)
-        this.childMsg = e;
+    parentHandleclick (e) {
+      console.log(e)
+      this.childMsg = e
     }
   }
 }

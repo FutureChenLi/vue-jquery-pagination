@@ -38,7 +38,7 @@ vue-cli3 选择自定义 可以设置eslin，默认也有eslin，需要自定义
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-### 记忆
+### 组件问题
 ```
 1.父组件向子组件传参使用props即可传参
     a.方式
@@ -72,6 +72,15 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 6.子组件与父组件交互对于input有个简写的方法，可以参照官方：在组件上使用 v-model
 
 ```
+
+### vue
+```vue
+1. template 标签占位，可以用于for循环
+2.方法在html中调用需要加()
+3.template不会解析，所以v-show也是无用的
+
+```
+
 
 ### ES6写法
 ```
