@@ -43,7 +43,7 @@
 export default {
   name: 'Pageination',
   props: {
-    msg: String
+    pageParams: {}
   },
   data: function () {
     return {
@@ -74,6 +74,10 @@ export default {
         } // 回调
       }
     }
+  },
+  beforeUpdate: function () {
+    // 合并参数
+    this.defaults = {...this.defaults, ...this.pageParams}
   },
   created: function () {
     // this.defaults = {...this.defaults,totalData:20,showData:10,pageCount:2,mode:'unfixed',keepShowPN:true,jump:true}

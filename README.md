@@ -50,7 +50,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
           'msg'
         ]  
 2.父组件动态改变子组件的内容，可将更改父组件的标签值，即传值时使用父组件的data即可
-    并通过：v-bind:msg赋值
+    并通过：v-bind:msg赋值或者:msg赋值
 3.子组件向父组件传参
     子组件调用父组件，在父组件方法中修改父组件的参数
 4.父组件调用子组件方法
@@ -78,6 +78,14 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 1. template 标签占位，可以用于for循环
 2.方法在html中调用需要加()
 3.template不会解析，所以v-show也是无用的
+4.传参时利用了beforeUpdate函数
+    原因：默认参数比较多，为json对象，如果作为参数传入，则会覆盖对象其他默认值
+        就选择，传参是传参，默认参数是默认参数，收到传参，将默认参数与传入参数合并
+        ，节点目前考虑有两个，一个是利用watch，一个是利用赋值节点，赋值节点beforeUpdate与updated
+        updated会导致两次渲染，beforeUpdate测试为一次,watch需要用到深度监听，
+        节点又比较多，写起来比较麻烦，占时选用beforeUpdate。按推测在
+        beforeUpdate与updated中修改data值，会造成死循环，但测试没有。这点不太明白
+    问题：需要弄明白为啥beforeUpdate不会造成死循环
 
 ```
 
